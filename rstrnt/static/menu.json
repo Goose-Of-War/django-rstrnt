@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Idli",
+		"price": 30,
+		"img": ""
+	},
+	{
+		"name": "Dosa",
+		"price": 40,
+		"img": ""
+	},
+	{
+		"name": "Pongal Vada",
+		"price": 45,
+		"img": ""
+	}
+]
