@@ -1,9 +1,5 @@
-<html>
-	<head>
-		<title>Item Page: {{ item }} </title>
-	</head>
-	<body>
-		<h2><center>{{ item }}</center></h2>
-		<br><br>Here's the page for {{ item }}(? JK. It's just a template.)
-	</body>
-</html>
+{% extends "_base.hmtl" %}
+
+{% block pagebody %}
+	Page for the item {{ item }}. (Still a template ;-;)
+{% endblock %}

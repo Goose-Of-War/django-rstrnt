@@ -1,25 +1,17 @@
-{% load static %}
+{% extends "_base.html" %}
+{% block pagebody %}
+	<h2><center>MENU</center></h2>
+	<br><br>
 
-<html>
-	<head>
-		<title>Menu</title>
-		<link rel="stylesheet" href={% static 'style.css'%}
-	</head>
-
-	<body>
-		<h2><center>MENU</center></h2>
-		<br><br>
-
-		<div class="menu-container">
-			{% for item in items %}
-				<div class="menu-item">
-					<img src="{{ item.img }}" class="menu-item-image" alt="{{ item.name }}">
-					<div class="menu-item-info">
-						<b><i>{{ item.name }}</i></b><br>
-						<b>Price:</b> {{ item.price }}<br>
-					</div>
+	<div class="menu-container">
+		{% for item in items %}
+			<div class="menu-item">
+				<img src="{{ item.img }}" class="menu-item-image" alt="{{ item.name }}">
+				<div class="menu-item-info">
+					<b><i>{{ item.name }}</i></b><br>
+					<b>Price:</b> {{ item.price }}<br>
 				</div>
-			{% endfor %}
-		</div>
-	</body>
-</html>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% load static %}
+
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href={% static 'style.css' %}>
+		<!--Custom CSS Styling-->
+		{% block customcss %}
+		{% endblock %}
+		<!--Custom JS Scripts (in case responsiveness is added)-->
+		{% block customjs %}
+		{% endblock %}
+	</head>
+
+	<body>
+		<!--HTML body-->
+		{% block pagebody %}
+		{% endblock %}
+	</body>
+</html>
