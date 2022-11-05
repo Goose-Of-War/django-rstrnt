@@ -3,7 +3,7 @@
 	<h2><center>MENU</center></h2>
 	
 	{% if items %}
-		<div class="menu-container"></div>
+		<div class="menu-container">
 			{% for item in items %}
 				<div class="menu-item">
 					<img src="{{ item.img }}" class="menu-item-image" alt="{{ item.name }}">
