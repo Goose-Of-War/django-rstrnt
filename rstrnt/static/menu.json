@@ -1,17 +1,1 @@
-[
-	{
-		"name": "Idli",
-		"price": 30,
-		"img": ""
-	},
-	{
-		"name": "Dosa",
-		"price": 40,
-		"img": ""
-	},
-	{
-		"name": "Pongal Vada",
-		"price": 45,
-		"img": ""
-	}
-]
+[{"name": "Chaat", "price": "35", "img": "chat.png"}, {"name": "Dosa", "price": "30", "img": "dosa.png"}, {"name": "Idli", "price": "25", "img": "idli.png"}, {"name": "Poori", "price": "40", "img": "poori.png"}, {"name": "Samosa", "price": "40", "img": "sms.png"}]

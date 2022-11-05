@@ -1,9 +1,9 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
 	path('', views.index, name= "index"),
-	path('alt', views.another_view),
+	path('add', views.add_to_menu, name= "add_item"),
 	path('menu', views.show_menu, name= "menu"),
-	path('item/<str:item>', views.view_item, name= "item")
+	re_path('.*', views.render_404, name= "404")
 ]
