@@ -12,7 +12,7 @@ class ItemForm(forms.Form):
 	img = forms.CharField(label= "Img link")
 
 def index(request):
-	return HttpResponse("Work in progress, please come back later ;-;")
+	return render(request, 'index.html')
 
 def render_404(request):
 	return render(request, '404.html', {"pagetitle": "404"})
@@ -22,6 +22,7 @@ def show_menu(request):
 		with open('rstrnt/static/menu.json') as jsonfile: menu = load(jsonfile)
 	except:
 		with open('rstrnt/static/menu.json', 'w') as jsonfile: dump([], jsonfile)
+		menu = []
 	return render(request, "menu.html", {
 		"items": menu, 
 		"pagetitle": "Menu"
