@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from json import load, dump
 from os import getcwd
+from . import models
 # Create your views here.
 
 class ItemForm(forms.Form):
@@ -18,11 +19,7 @@ def render_404(request):
 	return render(request, '404.html', {"pagetitle": "404"})
 
 def show_menu(request):
-	try:
-		with open('rstrnt/static/menu.json') as jsonfile: menu = load(jsonfile)
-	except:
-		with open('rstrnt/static/menu.json', 'w') as jsonfile: dump([], jsonfile)
-		menu = []
+	menu = list(models.FoodItem.objects.all())
 	return render(request, "menu.html", {
 		"items": menu, 
 		"pagetitle": "Menu"
@@ -32,15 +29,7 @@ def add_to_menu(request):
 	if request.method == "POST":
 		form = ItemForm(request.POST)
 		if form.is_valid():
-			try:
-				with open('rstrnt/static/menu.json') as jsonfile: menu = load(jsonfile)
-			except:
-				with open('rstrnt/static/menu.json', 'w') as jsonfile: dump([], jsonfile)
-				menu = []
-			item = dict([ (i, *dict(request.POST)[i]) for i in ['name', 'price', 'img'] ])
-			menu.append(item)
-			with open('rstrnt/static/menu.json', 'w') as jsonfile: dump(menu, jsonfile)
-			print("Reached this point ;-;")
+			models.FoodItem(**form.clean()).save()
 			return HttpResponseRedirect(reverse("menu"))
 		else:
 			return render(request, "add_item.html", {

@@ -28,6 +28,7 @@ form {
 
 .menu-container {
 	width: 80%;
+	margin: 0% 10%;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
