@@ -2,15 +2,20 @@
 {% block pagebody %}
 	<h2><center>MENU</center></h2>
 	
-	<div class="menu-container">
-		{% for item in items %}
-			<div class="menu-item">
-				<img src="{{ item.img }}" class="menu-item-image" alt="{{ item.name }}">
-				<div class="menu-item-info">
-					<b><i>{{ item.name }}</i></b><br>
-					<b>Price:</b> {{ item.price }}<br>
+	{% if items %}
+		<div class="menu-container"></div>
+			{% for item in items %}
+				<div class="menu-item">
+					<img src="{{ item.img }}" class="menu-item-image" alt="{{ item.name }}">
+					<div class="menu-item-info">
+						<b><i>{{ item.name }}</i></b><br>
+						<b>Price:</b> {{ item.price }}<br>
+					</div>
 				</div>
-			</div>
-		{% endfor %}
-	</div>
+			{% endfor %}
+		</div>
+	{% else %}
+		<center>There is nothing ready at the moment. Please wait for the admin to add some items.</center>
+	{% endif %}
+	
 {% endblock %}
