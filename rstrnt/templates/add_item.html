@@ -1,9 +1,51 @@
 {% extends "_base.html" %}
 
 {% block pagebody %}
+	<h1>Add Item:</h1>
 	<form action="{% url 'add_item' %}" method="POST">
 		{% csrf_token %}
 		{{ form }}
 		<input type="submit">
 	</form>
+{% endblock %}
+
+{% block customcss %}
+	<style>
+		form {
+			display: flex;
+			flex-direction: column;
+			width: 40%;
+			margin: 40px auto;
+			padding: 14px 8px;
+			align-self: center;
+			background-color:peru;
+		}
+
+		form input, form label{
+			margin: 5px 0px;
+		}
+
+		form label {
+			font-weight: bold;
+		}
+
+		form input {
+			height: 30px;
+			width: 80%;
+			align-self: center;
+		}
+
+		.submit-button {
+			width: 60%;
+			height: 50px;
+			font-size: large;
+			background-color: gold;
+		}
+	</style>
+{% endblock %}
+
+{% block customjs %}
+	<script>
+		window.onload = () => { document.getElementsByTagName('input')[4].className = "submit-button"; }
+	</script>
 {% endblock %}

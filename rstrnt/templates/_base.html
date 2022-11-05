@@ -9,9 +9,6 @@
 		<!--Custom CSS Styling-->
 		{% block customcss %}
 		{% endblock %}
-		<script>
-			
-		</script>
 		<!--Custom JS Scripts (in case responsiveness is added)-->
 		{% block customjs %}
 		{% endblock %}
@@ -21,11 +18,17 @@
 		<!--HTML body-->
 		<nav class="navbar">
 			<div class="navbar-head">Rstrnt</div>
+			<div class="navbar-filler"></div>
 			<a href="{% url 'index' %}" class="navbar-elm">Home</a>
 			<a href="{% url 'menu' %}" class="navbar-elm">Menu</a>
 			<a href="{% url 'add_item' %}" class="navbar-elm">Add Item</a>
 		</nav>
-		{% block pagebody %}
-		{% endblock %}
+		<main-content>
+			{% block pagebody %}
+			{% endblock %}
+		</main-content>
+		<footer>
+
+		</footer>
 	</body>
 </html>

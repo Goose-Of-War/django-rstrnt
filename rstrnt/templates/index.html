@@ -2,7 +2,25 @@
 
 {% block pagebody %}
 	<center>
+		<br>
 		<h1>Welcome!</h1>
-		Welcome to the Roadside Restaurant. Enjoy the finest dining experience with our assorted collection of dishes.
+		Welcome to the Roadside Restaurant. Enjoy the finest dining experience with our assorted collection of dishes.<br>
+		Click the button below to see the menu.<br>
+		<form action="{% url 'menu' %}">
+			<input type="submit" value="Click" id="showMenu">
+		</form>
 	</center>
+{% endblock %}
+
+{% block customcss %}
+	<style>
+		#showMenu {
+			margin: 20px;
+			align-self: center;
+			width: 90px;
+			height: 50px;
+			font-size: larger;
+			background-color: cadetblue;
+		}
+	</style>
 {% endblock %}

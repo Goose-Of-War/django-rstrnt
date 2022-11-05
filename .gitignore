@@ -1,6 +1,6 @@
-*/__pycache__
+db.sqlite3
 rstrnt/static/images
+*/__pycache__
 *.pyc
 *.json
 *.png
-db.sqlite3
