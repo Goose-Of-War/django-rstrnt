@@ -22,9 +22,24 @@ Well, the exercise required me to do the following:
 And what have I done?
 - CRU... hey? Where's the D?
 - Welp, static web pages, but using templates (I mean... that's kinda why we even have it lol. DRY FTW.)
-- Creativity... Nope, doesn't ring a bell.
+- Creativity... Nope, doesn't ring a bell. (At least I got some styling in my stuff)
 
 (I'm doomed, aren't I?)
+
+##
+### Running the app:
+- Clone the repository (preferably in a `venv`)
+- Make sure django is present (if you're in a `venv`, all the more reason, since pip scripts need to be reinstalled)
+- Type the following in the Terminal: `py manage.py runserver` (Note: Depending on your OS and other parameters, `py` should be replaced with the appropriate equivalent)
+- The app can be found in the link [localhost:8000/rstrnt](localhost:8000/rstrnt)
+
+### Model used:
+```py 
+class FoodItem(models.Model):
+	name = models.CharField(max_length=40, primary_key=True)
+	price = models.IntegerField()
+	img = models.CharField(max_length=200, null=True)
+```
 
 ##
 > _I will be working on this repository only for a few days. So excuse me if it feels a bit sloppy ;-;_
